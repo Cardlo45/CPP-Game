@@ -1,6 +1,13 @@
-raylib-master
-_build/obj
-_build/*vcxproj*
-_bin
+
+.git
+
+# Visual Studio (Code) stuff
 .vs
+.vscode
 .vshistory
+
+# Caching Stuff
+build
+packages
+x64
+x86
