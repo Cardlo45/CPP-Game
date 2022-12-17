@@ -55,6 +55,7 @@
     <None Include="README.md">
       <Filter>Ressourcendateien</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\img.png">

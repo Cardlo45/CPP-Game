@@ -1,3 +1,5 @@
+#include <string>
+
 #include "raylib.h"
 
 #include "gameobject.h"
@@ -15,8 +17,8 @@ public:
 	~Background(void);
 private:
 	Texture texture;
-	Rectangle source;
-	Rectangle destination;
+	/*Rectangle source;
+	Rectangle destination;*/
 };
 
 #endif // !BACKGROUND_H

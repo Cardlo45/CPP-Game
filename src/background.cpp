@@ -4,7 +4,7 @@
 void Background::Update() { return; }
 void Background::Render()
 {
-	DrawTexture(texture, 0, 0, Color{ 0,0,0,255 });
+	DrawTexture(texture, 0, 0, Color{ 255,255,255,255 });
 }
 
 Background::Background()
@@ -13,7 +13,7 @@ Background::Background()
 
 	Image background = LoadImage("./assets/img.png");
 	texture = LoadTextureFromImage(background);
-	SetTextureFilter(texture, 0);
+	SetTextureFilter(texture, TEXTURE_FILTER_POINT);
 }
 Background::~Background()
 {
