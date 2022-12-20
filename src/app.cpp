@@ -3,7 +3,16 @@
 int main()
 {
 	InitWindow(1280, 720, "CPP-Game");
+	SetTargetFPS(30);
+#if _DEBUG
+	TraceLog(LOG_WARNING, "Debug is An");
+#else
+	// Disable Console?
+#endif // _DEBUG
+
+	TraceLog(LOG_INFO, "Loading Objects...");
 	Background background;
+	TraceLog(LOG_INFO, "All Objects Loaded.");
 
 	while (!WindowShouldClose())
 	{

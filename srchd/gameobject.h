@@ -5,11 +5,11 @@
 
 class GameObject
 {
-public:
+protected:
 	Vector2 position;
 	Vector2 scale;
 	float rotation;
-
+public:
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 

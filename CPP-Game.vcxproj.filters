@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\img.png">
-      <Filter>Ressourcendateien\Audio</Filter>
+      <Filter>Ressourcendateien\Visual</Filter>
     </Image>
   </ItemGroup>
 </Project>

@@ -17,8 +17,10 @@ public:
 	~Background(void);
 private:
 	Texture texture;
-	/*Rectangle source;
-	Rectangle destination;*/
+	int height;
+
+	bool up;
+	bool down;
 };
 
 #endif // !BACKGROUND_H
