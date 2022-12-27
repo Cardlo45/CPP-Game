@@ -7,7 +7,7 @@ int main()
 #if _DEBUG
 	TraceLog(LOG_WARNING, "Debug is An");
 #else
-	// Disable Console?
+	#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #endif // _DEBUG
 
 	TraceLog(LOG_INFO, "Loading Objects...");
