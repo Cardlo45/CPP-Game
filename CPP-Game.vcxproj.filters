@@ -33,6 +33,21 @@
     <ClCompile Include="src\globals.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\object1.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object2.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object3.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object4.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object5.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="srchd\app.h">
@@ -47,6 +62,21 @@
     <ClInclude Include="srchd\globals.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="srchd\object1.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="srchd\object2.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="srchd\object3.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="srchd\object4.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="srchd\object5.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore">
@@ -59,6 +89,21 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\img.png">
+      <Filter>Ressourcendateien\Visual</Filter>
+    </Image>
+    <Image Include="assets\obj1.png">
+      <Filter>Ressourcendateien\Visual</Filter>
+    </Image>
+    <Image Include="assets\obj2.png">
+      <Filter>Ressourcendateien\Visual</Filter>
+    </Image>
+    <Image Include="assets\obj3.png">
+      <Filter>Ressourcendateien\Visual</Filter>
+    </Image>
+    <Image Include="assets\obj4.png">
+      <Filter>Ressourcendateien\Visual</Filter>
+    </Image>
+    <Image Include="assets\obj5.png">
       <Filter>Ressourcendateien\Visual</Filter>
     </Image>
   </ItemGroup>

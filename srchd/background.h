@@ -1,7 +1,4 @@
-#include <string>
-
-#include "raylib.h"
-
+#include "globals.h"
 #include "gameobject.h"
 
 #ifndef BACKGROUND_H
@@ -17,10 +14,8 @@ public:
 	~Background(void);
 private:
 	Texture texture;
-	int height;
 
-	bool up;
-	bool down;
+	int move;
 };
 
 #endif // !BACKGROUND_H

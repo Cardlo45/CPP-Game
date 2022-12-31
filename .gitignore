@@ -8,11 +8,12 @@
 
 # Caching Stuff
 enc_temp_folder
-build
 packages
 
-Debug
-Release
+# Build
+*.gch
+
+build
+
 x64
 Win32
-x86

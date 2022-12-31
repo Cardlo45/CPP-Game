@@ -3,13 +3,16 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
+#pragma warning disable C26495
+
 class GameObject
 {
-protected:
+public:
 	Vector2 position;
 	Vector2 scale;
 	float rotation;
-public:
+	int layer;
+
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 

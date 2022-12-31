@@ -1,46 +1,50 @@
 #include "background.h"
-#include "globals.h"
+
+#pragma warning disable C4244
 
 void Background::Update()
 {
 	if (IsKeyDown(KEY_S))
 	{
-		up = true;
-		down = false;
+		move = 2;
 	}
 	else if (IsKeyDown(KEY_W))
 	{
-		up = false;
-		down = true;
+		move = 1;
 	}
 	else if (IsKeyDown(KEY_E))
 	{
-		up = false;
-		down = false;
+		move = 0;
 	}
 
-	if (height < 0 && down)
+	if (position.y < 0 && move == 2)
 	{
-		height += 2;
+		position.y += 2;
 	}
-	else if (height > -720 && up)
+	else if (position.y > -720 && move == 1)
 	{
-		height -= 2;
+		position.y -= 2;
 	}
 }
 void Background::Render()
 {
-	DrawTexture(texture, 0, height, Color{ 255,255,255,255 });
+	DrawTexture(texture, (int)position.x, (int)position.y, Color{255,255,255,255});
 }
 
 Background::Background()
 {
 	TraceLog(LOG_INFO, "Loading Background...");
-	height = -720;
 	gameObjects.push_back(this);
 
-	Image background = LoadImage("./assets/img.png");
-	texture = LoadTextureFromImage(background);
+	move = 0;
+
+	position = Vector2{ 0.0f, -720.0f };
+	scale = Vector2{ 1.0f, 1.0f };
+	rotation = 0.0f;
+	layer = -1;
+
+	Image textureImg = LoadImage("./assets/img.png");
+	texture = LoadTextureFromImage(textureImg);
 	SetTextureFilter(texture, TEXTURE_FILTER_POINT);
 	TraceLog(LOG_INFO, "Background Loaded.");
 }
