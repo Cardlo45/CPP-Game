@@ -1,29 +1,55 @@
+#include <string>
+#include <list>
 #include <raylib-cpp.hpp>
+#include "inc/globals.hpp"
+#include "inc/gameobject.hpp"
+#include "inc/gameobjects/background.hpp"
+#include "inc/gameobjects/obj1.hpp"
+#include "inc/gameobjects/obj2.hpp"
+#include "inc/gameobjects/obj3.hpp"
+#include "inc/gameobjects/obj4.hpp"
+#include "inc/gameobjects/obj5.hpp"
 
-int main() {
-    
-    // Initialization
-    int screenWidth = 800;
-    int screenHeight = 450;
+#include "inc/export_img.hpp"
 
-    raylib::Color textColor(LIGHTGRAY);
-    raylib::Window w(screenWidth, screenHeight, "Raylib C++ Starter Kit Example");
-    
-    SetTargetFPS(60);
+int main()
+{
+	int wHeight = 720;
+	int wWidth = 1280;
+	std::string wTitle = "CPP-Game";
 
-    // Main game loop
-    while (!w.ShouldClose()) // Detect window close button or ESC key
-    {
-        // Update
+	raylib::Window w(wWidth, wHeight, wTitle);
+	SetTargetFPS(60);
+	SetExitKey(KEY_NULL); // Esc will not stop the programm
 
-        // TODO: Update your variables here
+	ExportImg(); // Create Image Headers
 
-        // Draw
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        textColor.DrawText("Congrats! You created your first window!", 190, 200, 20);
-        EndDrawing();
-    }
-
-    return 0;
+	TraceLog(LOG_INFO, "Loading Objects...");
+	Background background;
+	Object1 obj1;
+	Object2 obj2;
+	Object3 obj3;
+	Object4 obj4;
+	Object5 obj5;
+	TraceLog(LOG_INFO, "All Objects Loaded.");
+	
+	// Main Loop
+	while (!w.ShouldClose())
+	{
+		// Update Gameobjects (move them, do logic, delete them)
+		for (Gameobject *go : gameobjects)
+		{
+			go->Update();
+		}
+		// Draw the Screen
+		BeginDrawing();
+		ClearBackground(Color{0, 0, 0, 255});
+		for (Gameobject *go : gameobjects)
+		{
+			go->Render();
+		}
+		EndDrawing();
+	}
+	CloseWindow();
+	return 0;
 }

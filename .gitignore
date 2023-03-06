@@ -1,4 +1,10 @@
+# Auto-Generated stuff, not needed for compiling
+bin
 include
 lib
-bin
-.idea
+
+# Visual Studio Config, could contain private data
+.vs
+.vscode
+# vshistoy takes a lot of space over time
+.vshistory
