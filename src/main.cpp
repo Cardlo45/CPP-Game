@@ -17,7 +17,6 @@ int main()
 	int wHeight = 720;
 	int wWidth = 1280;
 	std::string wTitle = "CPP-Game";
-
 	raylib::Window w(wWidth, wHeight, wTitle);
 	SetTargetFPS(60);
 	SetExitKey(KEY_NULL); // Esc will not stop the programm

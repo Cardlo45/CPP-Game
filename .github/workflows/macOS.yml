@@ -15,17 +15,17 @@ jobs:
     - name: make setup
       run: make setup
       
-    - name: make bin/app
-      run: make bin/app
+    - name: make bin/cpp-game
+      run: make bin/cpp-game
     - name: 'export binary'
       uses: actions/upload-artifact@v2
       with:
-          name: app
-          path: bin/app
+          name: cpp-game
+          path: bin/cpp-game
     - name: make clean
       run: make clean
 
-    - name: make bin/app CXX=g++
-      run: make bin/app CXX=g++
+    - name: make bin/cpp-game CXX=g++
+      run: make bin/cpp-game CXX=g++
     - name: make clean
       run: make clean

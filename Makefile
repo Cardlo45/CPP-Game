@@ -10,12 +10,16 @@ platformpth = $(subst /,$(PATHSEP),$1)
 
 # Set global macros
 buildDir := bin
-executable := app
+executable := cpp-game
 target := $(buildDir)/$(executable)
 sources := $(call rwildcard,src/,*.cpp)
 objects := $(patsubst src/%, $(buildDir)/%, $(patsubst %.cpp, %.o, $(sources)))
 depends := $(patsubst %.o, %.d, $(objects))
-compileFlags := -std=c++17 -I include -g
+## No Optimization + Debug Flag
+compileFlags := -std=c++17 -I include -Wall -O0 -g
+## Full Optimization without Debug Flag
+## -O1 AND -O2 BREAK SOME CODE
+# compileFlags := -std=c++17 -I include -Wall -O1
 linkFlags = -L lib/$(platform) -l raylib
 
 # Check for Windows
@@ -83,7 +87,7 @@ lib: submodules
 
 # Link the program and create the executable
 $(target): $(objects)
-	$(CXX) $(objects) -o $(target) $(linkFlags)
+	$(CXX) $(objects) assets/game.res -o $(target) $(linkFlags)
 
 # Add all rules from dependency files
 -include $(depends)

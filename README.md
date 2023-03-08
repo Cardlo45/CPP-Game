@@ -31,13 +31,13 @@ By using the following Make commands instead of the default target, we can skip 
 #### macOS & Linux
 
 ```console
-$ make bin/app; make execute
+$ make bin/cpp-game; make execute
 ```
 
 #### Windows
 
 ```console
-> mingw32-make bin/app && mingw32-make execute
+> mingw32-make bin/cpp-game && mingw32-make execute
 ```
 
 ## Licence

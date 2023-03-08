@@ -1,0 +1,28 @@
+// Original Icon was Generated with Stable Diffusion
+GLFW_ICON ICON "icon.ico"
+
+1 VERSIONINFO
+FILEVERSION     4,0,0,0
+PRODUCTVERSION  4,0,0,0
+BEGIN
+	BLOCK "StringFileInfo"
+		BEGIN
+	// BLOCK "080904E4"	// English UK
+	BLOCK "040904E4"	// English US
+	BEGIN
+		// VALUE "CompanyName", "Carslo_45"
+		VALUE "FileDescription", "CPP-Game, a Bullet Hell like game."
+		VALUE "FileVersion", "0.2.0.1"
+		VALUE "InternalName", "cpp-game"
+		// VALUE "LegalCopyright", ""
+		// VALUE "OriginalFilename", "cpp-game.exe"
+		VALUE "ProductName", "cpp-game"
+		VALUE "ProductVersion", "0.2.0"
+	END
+END
+	BLOCK "VarFileInfo"
+	BEGIN
+	// VALUE "Translation", 0x809, 1252	// English UK
+	VALUE "Translation", 0x409, 1252	// English US
+	END
+END
