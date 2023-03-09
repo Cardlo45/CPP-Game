@@ -15,11 +15,11 @@ target := $(buildDir)/$(executable)
 sources := $(call rwildcard,src/,*.cpp)
 objects := $(patsubst src/%, $(buildDir)/%, $(patsubst %.cpp, %.o, $(sources)))
 depends := $(patsubst %.o, %.d, $(objects))
-## No Optimization + Debug Flag
+## Debug: No Optimization and debug images
 compileFlags := -std=c++17 -I include -Wall -O0 -g
-## Full Optimization without Debug Flag
-## -O1 AND -O2 BREAK SOME CODE
-# compileFlags := -std=c++17 -I include -Wall -O1
+## Release: Full Optimization
+#==[NOT WORKING]==#
+# compileFlags := -std=c++17 -I include -Wall -O2
 linkFlags = -L lib/$(platform) -l raylib
 
 # Check for Windows
