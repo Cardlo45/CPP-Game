@@ -18,7 +18,7 @@ jobs:
       shell: cmd
 
     - name: windres
-      run: windres windres assets/game.rc -o bin/game.rc.data
+      run: windres assets/game.rc -O coff bin/game.rc.data -F pe-i386
       shell: cmd
       
     - name: make bin/cpp-game
