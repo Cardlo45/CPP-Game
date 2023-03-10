@@ -34,6 +34,7 @@ ifeq ($(OS), Windows_NT)
 	MKDIR := -mkdir -p
 	RM := -del /q
 	COPY = -robocopy "$(call platformpth,$1)" "$(call platformpth,$2)" $3
+	objects += assets/game.res
 else
 	# Check for MacOS/Linux
 	UNAMEOS := $(shell uname)
@@ -49,6 +50,7 @@ else
 		CXX ?= clang++
 		linkFlags += -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL
 		libGenDir := src
+		objects += assets/game.res
 	endif
 
 	# Set UNIX macros
@@ -87,7 +89,7 @@ lib: submodules
 
 # Link the program and create the executable
 $(target): $(objects)
-	$(CXX) $(objects) assets/game.res -o $(target) $(linkFlags)
+	$(CXX) $(objects) -o $(target) $(linkFlags)
 
 # Add all rules from dependency files
 -include $(depends)
