@@ -34,7 +34,8 @@ ifeq ($(OS), Windows_NT)
 	MKDIR := -mkdir -p
 	RM := -del /q
 	COPY = -robocopy "$(call platformpth,$1)" "$(call platformpth,$2)" $3
-	objects += bin/game.rc.data
+	RES ?=
+	objects += $(RES)
 else
 	# Check for MacOS/Linux
 	UNAMEOS := $(shell uname)
