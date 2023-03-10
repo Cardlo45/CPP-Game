@@ -2,6 +2,7 @@
 #include <list>
 #include <raylib-cpp.hpp>
 #include "inc/globals.hpp"
+#include "assets/icon.png.h"
 #include "inc/gameobject.hpp"
 #include "inc/gameobjects/background.hpp"
 #include "inc/gameobjects/obj1.hpp"
@@ -18,6 +19,14 @@ int main()
 	int wWidth = 1280;
 	std::string wTitle = "CPP-Game";
 	raylib::Window w(wWidth, wHeight, wTitle);
+	Image ico = {
+		.data = ICON_DATA,
+		.width = ICON_WIDTH,
+		.height = ICON_HEIGHT,
+		.mipmaps = 1,
+		.format = ICON_FORMAT};
+	ImageFormat(&ico, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
+	SetWindowIcon(ico);
 	SetTargetFPS(60);
 	SetExitKey(KEY_NULL); // Esc will not stop the programm
 

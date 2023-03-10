@@ -16,6 +16,10 @@ jobs:
     - name: make setup
       run: mingw32-make setup
       shell: cmd
+
+    - name: windres
+      run: windres windres assets/game.rc -o bin/game.rc.data
+      shell: cmd
       
     - name: make bin/cpp-game
       run: mingw32-make bin/cpp-game

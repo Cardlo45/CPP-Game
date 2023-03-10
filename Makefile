@@ -34,7 +34,7 @@ ifeq ($(OS), Windows_NT)
 	MKDIR := -mkdir -p
 	RM := -del /q
 	COPY = -robocopy "$(call platformpth,$1)" "$(call platformpth,$2)" $3
-	objects += assets/game.res
+	objects += bin/game.rc.data
 else
 	# Check for MacOS/Linux
 	UNAMEOS := $(shell uname)
@@ -50,7 +50,6 @@ else
 		CXX ?= clang++
 		linkFlags += -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL
 		libGenDir := src
-		objects += assets/game.res
 	endif
 
 	# Set UNIX macros
