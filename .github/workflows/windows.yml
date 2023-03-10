@@ -12,14 +12,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: mkdir bin
-      run: mkdir bin
-      shell: cmd
-
-    - name: windres
-      run: windres assets/game.rc -O coff bin/game.rc.data -F pe-i386
-      shell: cmd
       
     - name: make setup
       run: mingw32-make setup
